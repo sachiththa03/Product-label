@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CEYPETCO Agrochemical – Mancozeb 80% WP</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Roboto+Slab:wght@500;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+
+<style>
+
+/* Two-column layout for Crops and Pests lists */
+#crops-list,
+#pests-list {
+  columns: 2;         /* two equal-width columns */
+  -webkit-columns: 2; /* Safari support */
+  -moz-columns: 2;    /* Firefox support */
+  column-gap: 40px;   /* space between columns */
+  list-style-position: inside;
+}
+
+/* On mobile, revert to one column */
+@media (max-width: 768px) {
+  #crops-list,
+  #pests-list {
+    columns: 1;
+    -webkit-columns: 1;
+    -moz-columns: 1;
+  }
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background: #f9f9f9;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: linear-gradient(90deg, #000, #8B0000);
+  color: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-bottom: 5px solid #B22222;
+}
+header img.logo {
+  max-height: 60px;
+  margin-right: 15px;
+}
+header h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-size: 2.5em;
+  letter-spacing: 2px;
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
+
+
+.product-title {
+  font-family: 'Roboto Slab', serif;
+  font-size: 2.2em;
+  font-weight: 700;
+  color: #B22222;  /* CEYPETCO red */
+  text-align: center;   /* centers the text */
+  margin: 20px auto 10px auto;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+  width: 100%;  /* ensures full width for center */
+}
+
+
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 15px;
+}
+
+/* Slideshow */
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+  margin: 20px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+.slides {
+  display: none;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  animation: fade 1s ease-in-out;
+}
+@keyframes fade {
+  from {opacity: 0.4}
+  to {opacity: 1}
+}
+/* Navigation */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 12px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.3s;
+  border-radius: 3px;
+  user-select: none;
+}
+.next { right: 10px; }
+.prev { left: 10px; }
+.prev:hover, .next:hover { background: rgba(0,0,0,0.5); }
+
+.dots {
+  text-align: center;
+  margin-top: 10px;
+}
+.dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 3px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+.active, .dot:hover { background-color: #B22222; }
+
+/* Sections */
+section {
+  margin: 30px 0;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+section h2 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+section h2 i {
+  margin-right: 10px;
+}
+.msds { border-left: 8px solid #B22222; }
+.crops { border-left: 8px solid #228B22; }
+.pests { border-left: 8px solid #FF8C00; }
+
+/* Lists */
+ul { padding-left: 20px; }
+ul li { margin: 6px 0; }
+ul li::marker { color: #B22222; }
+
+/* Buttons */
+button {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  padding: 10px 18px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #B22222, #8B0000);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+button:hover { transform: scale(1.05); }
+
+/* Footer */
+footer {
+  background: #000 url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+  color: white;
+  text-align: center;
+  padding: 25px;
+  font-size: 14px;
+  border-top: 5px solid #B22222;
+}
+footer a { color: #fff; text-decoration: underline; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  header h1 { font-size: 1.8em; }
+  .slides { height: 250px; }
+  .details-grid { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="https://github.com/sachiththa03/Product-label/blob/main/ceypetco-sri-lanka-seeklogo.png?raw=true" alt="CEYPETCO Logo" class="logo">
+  <h1>CEYPETCO Agro Chemicals</h1>
+</header>
+
+<div class="container">
+
+  <!-- Product Title -->
+  <h2 class="product-title">Mancozeb 80% WP</h2>
+
+  <!-- Slideshow -->
+  <div class="slideshow-container">
+    <img class="slides" src="1.jpg" alt="Product Image 1">
+    <img class="slides" src="2.jpg" alt="Product Image 2">
+    <!-- ... rest of 14 images ... -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <div class="dots">
+    <!-- dots here -->
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- Slideshow -->
+  <div class="slideshow-container">
+       <img class="slides" src="https://github.com/sachiththa03/Product-label/blob/main/1.jpg?raw=true" alt="Product Image 1">
+    <img class="slides" src="https://github.com/sachiththa03/Product-label/blob/main/2.jpg?raw=true" alt="Product Image 2">
+    <img class="slides" src="https://github.com/sachiththa03/Product-label/blob/main/3.webp?raw=true" alt="Product Image 3">
+    <img class="slides" src="https://github.com/sachiththa03/Product-label/blob/main/4.jpg?raw=true" alt="Product Image 4">
+    <img class="slides" src="https://github.com/sachiththa03/Product-label/blob/main/5.webp?raw=true" alt="Product Image 5">
+    <img class="slides" src="https://github.com/sachiththa03/Product-label/blob/main/6.jpg?raw=true" alt="Product Image 6">
+    <img class="slides" src="https://github.com/sachiththa03/Product-label/blob/main/7.jpg?raw=true" alt="Product Image 7">
+    <img class="slides" src="https://github.com/sachiththa03/Product-label/blob/main/8.jpg?raw=true" alt="Product Image 8">
+    <img class="slides" src="https://github.com/sachiththa03/Product-label/blob/main/9.jpg?raw=true" alt="Product Image 9">
+    <img class="slides" src="https://github.com/sachiththa03/Product-label/blob/main/10.jpg?raw=true" alt="Product Image 10">
+    <img class="slides" src="https://github.com/sachiththa03/Product-label/blob/main/11.jpeg?raw=true" alt="Product Image 11">
+    <img class="slides" src="https://github.com/sachiththa03/Product-label/blob/main/12.jpg?raw=true" alt="Product Image 12">
+    <img class="slides" src="https://github.com/sachiththa03/Product-label/blob/main/13.jpg?raw=true" alt="Product Image 13">
+    <img class="slides" src="https://github.com/sachiththa03/Product-label/blob/main/14.jpg?raw=true" alt="Product Image 14">
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <div class="dots">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+
+  <!-- Introduction -->
+  <section class="animate animate__animated animate__fadeIn">
+    <h2><i class="fas fa-info-circle"></i> Introduction</h2>
+    <p>A broad-spectrum protective fungicide with contact action, used to protect fruits, vegetables, grains, seeds, and field crops against various fungal diseases. Mancozeb acts as a multi-site inhibitor, toxic to fungal cell membranes. It contains zinc and manganese, essential trace elements for plant metabolism. Its resistance to rainout and low UV degradation ensures high persistence of action.</p>
+  </section>
+
+ <!-- MSDS Section -->
+  <section class="msds animate animate__animated animate__fadeIn">
+    <h2><i class="fas fa-exclamation-triangle"></i> Safety Data Sheet</h2>
+
+    <p><strong>Product Name:</strong> Mancozeb 80% WP</p>
+    <p><strong>Use:</strong> Fungicide</p>
+    <p><strong>Manufacturer:</strong> March Chemical Co., Ltd.</p>
+    <p><strong>Address:</strong> 14C Jinghui Business BLDG, 631 Zhongshan North Rd, Hangzhou, 310014, P.R. China</p>
+    <p><strong>Emergency Contact:</strong> +86-571-85814680</p>
+
+    <h3><i class="fas fa-exclamation-circle"></i> Hazards Identification</h3>
+    <ul>
+      <li><strong>Inhalation:</strong> Dust may irritate nose, throat, lungs.</li>
+      <li><strong>Eye Contact:</strong> May cause moderate irritation.</li>
+      <li><strong>Skin Contact:</strong> Prolonged exposure may cause dermatitis.</li>
+      <li><strong>Ingestion:</strong> Very low toxicity, but not recommended.</li>
+    </ul>
+
+    <h3><i class="fas fa-briefcase-medical"></i> First Aid Measures</h3>
+    <ul>
+      <li><strong>Inhalation:</strong> Move to fresh air.</li>
+      <li><strong>Eyes:</strong> Flush with water, consult doctor if irritation persists.</li>
+      <li><strong>Skin:</strong> Wash thoroughly, remove contaminated clothing.</li>
+      <li><strong>Ingestion:</strong> Give 2 glasses of water, seek medical advice.</li>
+    </ul>
+
+    <h3><i class="fas fa-fire"></i> Fire Fighting Measures</h3>
+    <ul>
+      <li><strong>Flash Point:</strong> 137.8°C</li>
+      <li><strong>Hazards:</strong> Dust may form explosive mixtures.</li>
+      <li><strong>Extinguishing Media:</strong> Dry chemical, CO₂, water spray, or foam.</li>
+      <li><strong>Dangerous Fumes:</strong> H₂S, CS₂, oxides of sulfur, nitrogen, carbon.</li>
+    </ul>
+
+    <h3><i class="fas fa-tools"></i> Handling & Storage</h3>
+    <ul>
+      <li>Avoid inhalation and skin/eye contact.</li>
+      <li>Store in cool, dry, ventilated place.</li>
+      <li>Keep container sealed, prevent contact with water.</li>
+    </ul>
+
+    <h3><i class="fas fa-user-shield"></i> Personal Protection</h3>
+    <ul>
+      <li>Use local exhaust ventilation.</li>
+      <li>Wear respirator, protective eyewear, gloves, and coveralls.</li>
+      <li>Wash hands and clothes after handling.</li>
+    </ul>
+
+    <h3><i class="fas fa-leaf"></i> Environmental Info</h3>
+    <ul>
+      <li>Toxic to fish and aquatic organisms.</li>
+      <li>Avoid contamination of water sources.</li>
+    </ul>
+
+    <p><a href="MSDS.pdf" target="_blank"><i class="fas fa-download"></i> Download Full MSDS PDF</a></p>
+  </section>
+
+ <section class="crops">
+  <h2><i class="fas fa-seedling"></i> Crops</h2>
+  <ul id="crops-list">
+    <li>Banana</li>
+    <li>Bean</li>
+    <li>Bell pepper</li>
+    <li>Bitter gourd</li>
+    <li>Cabbage</li>
+    <li>Cauliflower</li>
+    <li>Chilli</li>
+    <li>Cruciferaceae crops</li>
+    <li class="more-item" style="display:none;">Cucumber</li>
+    <li class="more-item" style="display:none;">Knol khol</li>
+    <li class="more-item" style="display:none;">Tomato</li>
+  </ul>
+  <button id="show-more-crops">Show More</button>
+</section>
+
+<section class="pests">
+  <h2><i class="fas fa-bug"></i> Pests & Diseases</h2>
+  <ul id="pests-list">
+    <li>Alternaria leaf blight</li>
+    <li>Anthracnose</li>
+    <li>Blossom blight</li>
+    <li>Downy mildew</li>
+    <li>Early blight</li>
+    <li>Late blight</li>
+    <li>Leaf spot</li>
+    <li>Purple blotch</li>
+    <li class="more-item-pests" style="display:none;">Additional pest</li>
+  </ul>
+  <button id="show-more-pests">Show More</button>
+
+  <p><a href="https://github.com/sachiththa03/Product-label/blob/main/Mancozeb%20bag.jpg?raw=true" target="_blank"><i class="fas fa-eye"></i> View Product Label</a></p>
+</section>
+
+</section>
+
+</div>
+
+
+
+<footer>
+  <p><i class="fas fa-building"></i> CEYPETCO AGRO CHEMICAL FUNCTION</p>
+ <p>
+  <i class="fas fa-phone"></i> 
+  <a href="tel:+94117104070">011 7 104070</a> / 
+  <a href="tel:+94117104073">011 7 104073</a> / 
+  <a href="tel:+94112106762">011 2 106762</a>
+</p>
+
+  <p><i class="fas fa-fax"></i> Fax: 011 2 572 316</p>
+  <p><i class="fas fa-envelope"></i> <a href="mailto:agrochem@ceypetco.gov.lk">agrochem@ceypetco.gov.lk</a></p>
+  <p><i class="fas fa-globe"></i> <a href="https://www.ceypetco.lk" target="_blank">www.ceypetco.lk</a></p>
+</footer>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let slides = document.getElementsByClassName("slides");
+  let dots = document.getElementsByClassName("dot");
+  for (let i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+  slideIndex++;
+  if (slideIndex > slides.length) { slideIndex = 1; }
+  for (let i = 0; i < dots.length; i++) { dots[i].className = dots[i].className.replace(" active", ""); }
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
+  setTimeout(showSlides, 3000); 
+}
+
+function plusSlides(n) {
+  slideIndex += n - 1;
+  showSlides();
+}
+
+function currentSlide(n) {
+  slideIndex = n - 1;
+  showSlides();
+}
+
+// Show More buttons
+document.getElementById('show-more-crops').addEventListener('click', function() {
+  document.querySelectorAll('#crops-list .more-item').forEach(item => item.style.display = 'list-item');
+  this.style.display = 'none';
+});
+document.getElementById('show-more-pests').addEventListener('click', function() {
+  document.querySelectorAll('#pests-list .more-item-pests').forEach(item => item.style.display = 'list-item');
+  this.style.display = 'none';
+});
+</script>
+</body>
+</html>
